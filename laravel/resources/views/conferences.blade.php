@@ -3,7 +3,6 @@
         padding: 5px;
     }
 </style>
-
 @extends('layout')
 @section('title', "Conferences")
 @section('content')
@@ -14,7 +13,9 @@
             <td>description</td>
             <td>address</td>
             <td>date</td>
-            <td>Operations</td>
+            @auth
+                <td>Operations</td>
+            @endauth
         </tr>
         @foreach($conferences as $conference)
             <tr>
@@ -23,15 +24,20 @@
                 <td>{{$conference['description']}}</td>
                 <td>{{$conference['address']}}</td>
                 <td>{{$conference['date']}}</td>
-                {{--<td><button type="submit" class="btn btn-primary">Update</button></td>--}}
-                <td>
-                    <a href={{"delete/".$conference['id']}}>Delete</a>
-                    <a href={{"edit/".$conference['id']}}>Edit</a>
-                </td>
+                @auth
+                    <td>
+                        <a href={{"delete/".$conference['id']}}>Delete</a>
+                        <a href={{"edit/".$conference['id']}}>Edit</a>
+                    </td>
+                @endauth
             </tr>
         @endforeach
     </table>
     <td>
-        <button type="submit" class="btn btn-primary">Create new conference</button>
+        @auth
+            <form action="http://127.0.0.1:8000/add">
+                <button type="submit">Create new conference</button>
+            </form>
+        @endauth
     </td>
 @endsection

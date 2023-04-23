@@ -28,6 +28,13 @@ class ConferenceController extends Controller
 
     function update(Request $req)
     {
+        $req->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'address' => 'required',
+            'date' => 'required'
+        ]);
+
         $data = Conference::find($req->id);
         $data->name = $req->name;
         $data->description = $req->description;
@@ -39,6 +46,13 @@ class ConferenceController extends Controller
 
     function addData(Request $req)
     {
+        $req->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'address' => 'required',
+            'date' => 'required'
+        ]);
+
         $conference = new Conference;
         $conference->name = $req->name;
         $conference->description = $req->description;
