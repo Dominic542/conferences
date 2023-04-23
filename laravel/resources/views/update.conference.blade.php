@@ -1,4 +1,5 @@
 @extends('layout')
-@section('title', "Home Page")
+@section('title', "Update conferences")
 @section('content')
+
 @endsection
