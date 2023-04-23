@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthManager;
-use App\Http\Controllers\ConferencesController;
+use App\Http\Controllers\ConferenceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,5 +28,9 @@ Route::group(['middleware' => 'auth'], function () {
     });
 });
 
-Route::get('/conferences', [ConferencesController::class, 'show']);
-Route::post('/conferences', [ConferencesController::class, 'conferencePost'])->name('conference.post');
+Route::get('/conferences', [ConferenceController::class, 'show']);
+Route::get('/delete/{id}', [ConferenceController::class, 'delete']);
+Route::get('/edit/{id}', [ConferenceController::class, 'showData']);
+Route::post('/edit', [ConferenceController::class, 'update']);
+Route::view('/add', 'add');
+Route::post('/add', [ConferenceController::class, 'addData']);
