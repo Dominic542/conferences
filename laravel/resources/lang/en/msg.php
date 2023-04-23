@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'delete'=>"Delete",
+    'edit'=>"Edit",
+    'create new conference'=>"Create new conference",
+    'conferences'=>"Conferences",
+    'id'=>"id",
+    'name'=>"name",
+    'description'=>"description",
+    'address'=>"address",
+    'date'=>"date",
+    'operations'=>"operations",
+    'logout'=>"Logout",
+    'web development frameworks'=>"Web development frameworks",
+    'login'=>"Login",
+    'registration'=>"Registration",
+    'create'=>"Create",
+    'enter name'=>"Enter name",
+    'enter description'=>"Enter description",
+    'enter address'=>"Enter address",
+    'email'=>"Email",
+    'password'=>"Password",
+    'Name'=>"Name",
+];

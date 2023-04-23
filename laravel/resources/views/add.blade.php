@@ -21,10 +21,10 @@
         </div>
         <form action="/add" method="POST">
             @csrf
-            <input type="text" name="name" placeholder="Enter name"> <br> <br>
-            <input type="text" name="description" placeholder="Enter description"> <br> <br>
-            <input type="text" name="address" placeholder="Enter address"> <br> <br>
+            <input type="text" name="name" placeholder="{{__('msg.enter name')}}"> <br> <br>
+            <input type="text" name="description" placeholder="{{__('msg.enter description')}}"> <br> <br>
+            <input type="text" name="address" placeholder="{{__('msg.enter address')}}"> <br> <br>
             <input type="date" name="date"> <br> <br>
-            <button type="submit">Create</button>
+            <button type="submit">{{__('msg.create')}}</button>
         </form>
 @endsection

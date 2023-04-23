@@ -8,11 +8,11 @@
 @section('content')
     <table border="1">
         <tr>
-            <td>id</td>
-            <td>name</td>
-            <td>description</td>
-            <td>address</td>
-            <td>date</td>
+            <td>{{__('msg.id')}}</td>
+            <td>{{__('msg.name')}}</td>
+            <td>{{__('msg.description')}}</td>
+            <td>{{__('msg.address')}}</td>
+            <td>{{__('msg.date')}}</td>
             @auth
                 <td>Operations</td>
             @endauth
@@ -26,8 +26,8 @@
                 <td>{{$conference['date']}}</td>
                 @auth
                     <td>
-                        <a href={{"delete/".$conference['id']}}>Delete</a>
-                        <a href={{"edit/".$conference['id']}}>Edit</a>
+                        <a href={{"delete/".$conference['id']}}>{{__('msg.delete')}}</a>
+                        <a href={{"edit/".$conference['id']}}>{{__('msg.edit')}}</a>
                     </td>
                 @endauth
             </tr>
@@ -36,7 +36,7 @@
     <td>
         @auth
             <form action="http://127.0.0.1:8000/add">
-                <button type="submit">Create new conference</button>
+                <button type="submit">{{__('msg.create new conference')}}</button>
             </form>
         @endauth
     </td>
